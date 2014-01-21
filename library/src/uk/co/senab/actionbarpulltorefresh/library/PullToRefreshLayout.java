@@ -26,7 +26,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import java.util.HashSet;
 
@@ -39,7 +39,7 @@ import uk.co.senab.actionbarpulltorefresh.library.viewdelegates.ViewDelegate;
  * This layout is setup by using the {@link ActionBarPullToRefresh} setup-wizard return by
  * @link ActionBarPullToRefresh#from(android.app.Activity)}.
  */
-public class PullToRefreshLayout extends FrameLayout {
+public class PullToRefreshLayout extends RelativeLayout {
 
     private static final boolean DEBUG = false;
     private static final String LOG_TAG = "PullToRefreshLayout";
@@ -157,7 +157,7 @@ public class PullToRefreshLayout extends FrameLayout {
     }
 
     @Override
-    public FrameLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
+    public RelativeLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new PullToRefreshLayout.LayoutParams(getContext(), attrs);
     }
 
@@ -245,7 +245,7 @@ public class PullToRefreshLayout extends FrameLayout {
         }
     }
 
-    static class LayoutParams extends FrameLayout.LayoutParams {
+    static class LayoutParams extends RelativeLayout.LayoutParams {
         private final String mViewDelegateClassName;
 
         LayoutParams(Context c, AttributeSet attrs) {
